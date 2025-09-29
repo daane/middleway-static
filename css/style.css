@@ -13,7 +13,7 @@ body {
     color: white;
     display: flex;
     flex-direction: column; /* ✅ to allow footer at bottom */
-    min-height: 100dvh;
+    min-height: 100vh;
 }
   
 .container {
@@ -49,10 +49,8 @@ p {
 footer {
     background-color: rgba(0, 0, 0, 0.2); /* subtle transparent footer */
     text-align: center;
-    font-size: 12px;                    /* ✅ fixed font size */
-    line-height: 18px;                  /* good readability for small text */
-    padding: 16px 12px calc(16px + env(safe-area-inset-bottom));
-    box-sizing: border-box;
+    padding: 1rem;
+    line-height: 1.4;
 }
   
 footer p {
