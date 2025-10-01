@@ -1,20 +1,80 @@
 /* Google Fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
-    /*background: linear-gradient(135deg, #667eea, #764ba2);*/
     background-image: url("../images/bg.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
     color: white;
     display: flex;
     flex-direction: column; /* ✅ to allow footer at bottom */
-    min-height: 100vh;
+    min-height: 100dvh;
 }
+
+.navbar {
+    top: 0;
+    padding: 1.75rem 1rem;
+  }
+  
+  .nav-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-logo {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    padding: 5px 10px;
+    border-radius: 6px;
+  }
+
+  body.home .nav-logo {
+    visibility: hidden; /* logo is invisible but still occupies space */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-links a[href="creed.html"] {
+    background: #f6a61d;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
   
 .container {
     text-align: center;
@@ -42,21 +102,71 @@ h2 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
   
-p {
-    font-size: 12px;
-}
-  
 footer {
-    background-color: rgba(0, 0, 0, 0.2); /* subtle transparent footer */
+    background-color: rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: 1rem;
-    line-height: 1.4;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 16px 12px calc(16px + env(safe-area-inset-bottom));
+    box-sizing: border-box;
+    color: #fff;
 }
   
 footer p {
     margin: 0;
     color: #f0f0f0;
+    font-size: 12px;
 }
+
+.creed-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    color: #fff;
+    box-sizing: border-box;
+  }
+  
+  .creed-container h1 {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    margin-top:0;
+  }
+
+  .creed-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-radius: 16px;
+  }
+  
+  .creed-container p {
+    line-height: 28px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+  }
+  
+  .creed-container ul {
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+  
+  .creed-container li {
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
+  }
 
 /* 📱 Responsive Styles for Mobile */
 @media (max-width: 600px) {
@@ -66,5 +176,9 @@ footer p {
     
     h2 {
         font-size: 5vw;
+    }
+
+    .creed-container {
+        padding-top: 0.5rem
     }
   }
