@@ -8,8 +8,6 @@ html, body {
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-image: url("../images/bg.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -48,6 +46,13 @@ body {
   body.home .nav-logo {
     visibility: hidden; /* logo is invisible but still occupies space */
   }
+
+  .logo-img {
+    height: 80px;
+    width: auto;
+    vertical-align: middle;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7)); /* makes white logo visible on transparent bg */
+  }
   
   .nav-links {
     list-style: none;
@@ -84,6 +89,13 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.hero-logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
+}
   
 h1 {
     font-family: 'Montserrat', sans-serif;
@@ -94,13 +106,13 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-h2 {
+/*h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 3vw;
     font-weight: 600;
     margin-top: 0.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
-}
+}*/
   
 footer {
     background-color: rgba(0, 0, 0, 0.2);
@@ -170,15 +182,15 @@ footer p {
 
 /* 📱 Responsive Styles for Mobile */
 @media (max-width: 600px) {
-    h1 {
+    /*h1 {
         font-size: 7vw;
     }
     
     h2 {
         font-size: 5vw;
-    }
+    }*/
 
     .creed-container {
-        padding-top: 0.5rem
+        padding-top: 25px;
     }
   }
