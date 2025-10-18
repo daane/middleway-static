@@ -1,6 +1,6 @@
-/* Google Fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
-
+/* ==============================
+   Base Styles
+============================== */
 html, body {
   margin: 0;
   padding: 0;
@@ -8,86 +8,102 @@ html, body {
 }
 
 body {
-    background-image: url("../images/bg.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-    color: white;
-    display: flex;
-    flex-direction: column; /* ✅ to allow footer at bottom */
-    min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  font-family: Arial,sans-serif;
+  color: #fff;
+  background: url("../images/bg.jpeg") center/cover no-repeat fixed;
 }
 
+:root {
+  --panel-bg: rgba(0,0,0,0.72);
+  --accent: #f6a61d;
+  --accent-rgb: 246,166,29; /* warm orange (r,g,b) for translucent use */
+  --accent-contrast: #111;
+  --muted-text: #f0f0f0;
+  --radius: 16px;
+  --container-max: 1100px;
+}
+
+/* ==============================
+   Navbar
+============================== */
 .navbar {
-    top: 0;
-    padding: 1.75rem 1rem;
-  }
-  
-  .nav-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-logo {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    padding: 5px 10px;
-    border-radius: 6px;
-  }
+  top: 0;
+  padding: 1.75rem 1rem;
+}
 
-  body.home .nav-logo {
-    visibility: hidden; /* logo is invisible but still occupies space */
-  }
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-  .logo-img {
-    height: 80px;
-    width: auto;
-    vertical-align: middle;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7)); /* makes white logo visible on transparent bg */
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    transition: opacity 0.2s ease;
-  }
+.nav-logo {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  padding: 5px 10px;
+  border-radius: 6px;
+}
 
-  .nav-links a[href="creed.html"] {
-    background: #f6a61d;
-    color: #fff;
-    font-weight: 600;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    font-size: 16px;
-    text-decoration: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  
+body.home .nav-logo {
+  visibility: hidden; /* invisible but keeps space */
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  vertical-align: middle;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  transition: opacity 0.2s ease;
+}
+
+/* Subtle pill for Creed and Contact to improve contrast/readability */
+.nav-links a[href="creed.html"],
+.nav-links a[href="contact.html"] {
+  background: rgb(255 179 0 / 80%);
+  color: #fff; /* keep text light for contrast */
+  font-weight: 600;
+  padding: 0.45rem 0.9rem; /* slightly larger tap target */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+}
+
+/* ==============================
+   Hero / Main Container
+============================== */
 .container {
-    text-align: center;
-    flex: 1; /* ✅ pushes footer to the bottom */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* adjust vertical position */
+  padding-top: 0; /* reset */
+  transform: translateY(-33px);
 }
 
 .hero-logo {
@@ -96,101 +112,149 @@ body {
   margin-bottom: 1rem;
   filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
 }
-  
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 5vw;
-    letter-spacing: -1px;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
 
-/*h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3vw;
-    font-weight: 600;
-    margin-top: 0.5rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
-}*/
-  
-footer {
-    background-color: rgba(0, 0, 0, 0.2);
-    text-align: center;
-    font-size: 12px;
-    line-height: 18px;
-    padding: 16px 12px calc(16px + env(safe-area-inset-bottom));
-    box-sizing: border-box;
-    color: #fff;
-}
-  
-footer p {
-    margin: 0;
-    color: #f0f0f0;
-    font-size: 12px;
-}
-
+/* ==============================
+   Creed Page
+============================== */
 .creed-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 2rem 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-    color: #fff;
-    box-sizing: border-box;
-  }
-  
-  .creed-container h1 {
-    font-size: 36px;
-    line-height: 44px;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    width: 100%;
-    margin-top:0;
-  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 2rem 1rem;
+  text-align: left;
+  box-sizing: border-box;
+}
 
-  .creed-content {
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    border-radius: 16px;
-  }
-  
-  .creed-container p {
-    line-height: 28px;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    max-width: 100%;
-  }
-  
-  .creed-container ul {
-    margin-top: 0.25rem;
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-  }
-  
-  .creed-container li {
-    margin-bottom: 0.25rem;
-    line-height: 1.5;
-  }
+.creed-container h1 {
+  font-size: 36px;
+  line-height: 44px;
+  margin: 0 0 1rem;
+  width: 100%;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
 
-/* 📱 Responsive Styles for Mobile */
+.creed-content {
+  background: var(--panel-bg);
+  backdrop-filter: blur(6px);
+  padding: 18px 22px;
+  border-radius: var(--radius);
+}
+
+.creed-container p {
+  line-height: 28px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.creed-container ul {
+  margin: 0.25rem 0 1rem 2rem;
+  padding: 0;
+}
+
+.creed-container li {
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+
+/* ==============================
+   Contact Page
+============================== */
+.contact-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 900px;
+  margin: 0 auto 0;
+  gap: 7px;
+
+  /* adjust vertical position */
+  padding-top: 0; /* reset */
+  transform: translateY(-28px);
+}
+
+.contact-container h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.contact-container p {
+  font-size: 1.1rem;
+  color: var(--muted-text);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.contact-card {
+  background: var(--panel-bg);
+  backdrop-filter: blur(6px);
+  padding: 36px 28px;
+  box-sizing: border-box;     /* ensure padding included inside width */
+  width: 100%;
+  max-width: 640px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.36);
+}
+
+.contact-card p {
+  margin-top: 0;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ==============================
+   Footer
+============================== */
+footer {
+  background: rgba(0, 0, 0, 0.18);
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 16px 12px calc(16px + env(safe-area-inset-bottom));
+  color: #fff;
+  box-sizing: border-box;
+}
+
+footer p {
+  margin: 0;
+  color: #f0f0f0;
+}
+
+/* ==============================
+   Responsive
+============================== */
 @media (max-width: 600px) {
-    /*h1 {
-        font-size: 7vw;
-    }
-    
-    h2 {
-        font-size: 5vw;
-    }*/
-
-    .creed-container {
-        padding-top: 25px;
-    }
+  .creed-container {
+    padding-top: 25px;
   }
+
+  /* mobile adjustments for contact page */
+  .contact-container {
+    padding-top: 28px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (min-width: 900px) {
+  .nav-links {
+    gap: 44px;
+  }
+}
