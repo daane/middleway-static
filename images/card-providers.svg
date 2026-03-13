@@ -1,0 +1,25 @@
+<svg width="720" height="110" viewBox="0 0 720 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Card providers</title>
+  <desc id="desc">Visa, Mastercard, American Express, and Discover card badges.</desc>
+
+  <rect x="10" y="10" width="165" height="90" rx="12" fill="#ffffff"/>
+  <rect x="10" y="10" width="165" height="90" rx="12" fill="none" stroke="#d3d3d3"/>
+  <text x="92" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#1a1f71">VISA</text>
+
+  <rect x="190" y="10" width="165" height="90" rx="12" fill="#ffffff"/>
+  <rect x="190" y="10" width="165" height="90" rx="12" fill="none" stroke="#d3d3d3"/>
+  <circle cx="257" cy="55" r="24" fill="#eb001b"/>
+  <circle cx="290" cy="55" r="24" fill="#f79e1b" fill-opacity="0.92"/>
+  <text x="272" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#000000">Mastercard</text>
+
+  <rect x="370" y="10" width="165" height="90" rx="12" fill="#ffffff"/>
+  <rect x="370" y="10" width="165" height="90" rx="12" fill="none" stroke="#d3d3d3"/>
+  <rect x="393" y="27" width="120" height="56" rx="8" fill="#2e77bc"/>
+  <text x="453" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">AMERICAN</text>
+  <text x="453" y="81" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">EXPRESS</text>
+
+  <rect x="550" y="10" width="160" height="90" rx="12" fill="#ffffff"/>
+  <rect x="550" y="10" width="160" height="90" rx="12" fill="none" stroke="#d3d3d3"/>
+  <text x="631" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#f58220">DISCOVER</text>
+  <path d="M582 69 H678" stroke="#f58220" stroke-width="5" stroke-linecap="round"/>
+</svg>
