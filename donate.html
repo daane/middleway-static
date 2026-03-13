@@ -11,12 +11,12 @@
   <nav class="navbar">
     <div class="nav-content">
       <a href="index.html" class="nav-logo">
-        <img src="images/HMW logo white.png" alt="House of Middleway Logo" class="logo-img">
+        <img src="images/HMW logo black.png" alt="House of Middleway Logo" class="logo-img">
       </a>
       <ul class="nav-links">
+        <li><a href="donate.html" class="active">Donate</a></li>
         <li><a href="creed.html">Creed</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="donate.html" class="active">Donate</a></li>
       </ul>
     </div>
   </nav>
@@ -43,9 +43,19 @@
 
       <section class="crypto-donate" aria-labelledby="crypto-donate-heading">
         <h2 id="crypto-donate-heading">Send Crypto</h2>
-        <p>You can also support House of Middleway directly with cryptocurrency.</p>
+        <p>Crypto donations are accepted anonymously; the Church does not issue tax receipts for cryptocurrency contributions.</p>
 
-        <div class="crypto-box">
+        <button
+          type="button"
+          class="crypto-toggle"
+          id="crypto-toggle"
+          aria-controls="crypto-addresses"
+          aria-expanded="false"
+        >
+          Show addresses
+        </button>
+
+        <div class="crypto-box" id="crypto-addresses" hidden>
           <div class="crypto-entry">
             <div class="crypto-entry-header">
               <h3>Bitcoin</h3>
@@ -71,5 +81,26 @@
       © 2026 House of Middleway. All rights reserved.
     </p>
   </footer>
+
+  <script>
+    const cryptoToggle = document.getElementById("crypto-toggle");
+    const cryptoAddresses = document.getElementById("crypto-addresses");
+
+    if (cryptoToggle && cryptoAddresses) {
+      cryptoToggle.addEventListener("click", () => {
+        const isHidden = cryptoAddresses.hasAttribute("hidden");
+
+        if (isHidden) {
+          cryptoAddresses.removeAttribute("hidden");
+          cryptoToggle.setAttribute("aria-expanded", "true");
+          cryptoToggle.textContent = "Hide addresses";
+        } else {
+          cryptoAddresses.setAttribute("hidden", "");
+          cryptoToggle.setAttribute("aria-expanded", "false");
+          cryptoToggle.textContent = "Show addresses";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
