@@ -402,6 +402,10 @@ footer p {
    Responsive
 ============================== */
 @media (max-width: 600px) {
+  .hero-above {
+    margin-top: 1.25rem;
+  }
+
   .creed-container {
     padding-top: 25px;
   }
